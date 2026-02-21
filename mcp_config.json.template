@@ -1,0 +1,60 @@
+{
+  "mcpServers": {
+    "dart": {
+      "command": "dart",
+      "args": [
+        "mcp-server"
+      ],
+      "env": {}
+    },
+    "stitch": {
+      "command": "npx",
+      "args": [
+        "@_davideast/stitch-mcp",
+        "proxy"
+      ]
+    },
+    "github": {
+      "command": "npx",
+      "args": [
+        "--silent",
+        "-y",
+        "@modelcontextprotocol/server-github"
+      ],
+      "env": {
+        "GITHUB_PERSONAL_ACCESS_TOKEN": "YOUR_GITHUB_PERSONAL_ACCESS_TOKEN"
+      }
+    },
+    "sqlite": {
+      "command": "npx",
+      "args": [
+        "--silent",
+        "-y",
+        "mcp-server-sqlite-npx",
+        "<YOUR_HOME_DIR>/.agents/antigravity.db"
+      ]
+    },
+    "slack": {
+      "command": "npx",
+      "args": [
+        "--silent",
+        "-y",
+        "@modelcontextprotocol/server-slack"
+      ],
+      "env": {
+        "SLACK_BOT_TOKEN": "REPLACE_WITH_YOUR_SLACK_BOT_TOKEN",
+        "SLACK_TEAM_ID": "REPLACE_WITH_YOUR_SLACK_TEAM_ID"
+      }
+    },
+    "filesystem": {
+      "command": "npx",
+      "args": [
+        "--silent",
+        "-y",
+        "@modelcontextprotocol/server-filesystem",
+        "<YOUR_HOME_DIR>",
+        "<YOUR_PROJECT_DIR>"
+      ]
+    }
+  }
+}
